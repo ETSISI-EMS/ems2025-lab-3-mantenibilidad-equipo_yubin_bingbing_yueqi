@@ -1,4 +1,4 @@
-:point_right: PUT YOUR CI BADGE HERE
+:point_right: [![Quality Gate Status](http://c1.etsisi.upm.es:8888/api/project_badges/measure?project=ETSISI-EMS_ems2025-lab-3-mantenibilidad-equipo_yubin_bingbing_yueqi_44808961-0b06-430a-882d-cab90196ce69&metric=alert_status&token=sqb_07480410b60ba7a8c6a642168ddde5d8d0643ef2)](http://c1.etsisi.upm.es:8888/dashboard?id=ETSISI-EMS_ems2025-lab-3-mantenibilidad-equipo_yubin_bingbing_yueqi_44808961-0b06-430a-882d-cab90196ce69)
 
 # EMS-lab3 Maintainability
 
