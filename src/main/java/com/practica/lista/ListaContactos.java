@@ -28,7 +28,8 @@ public class ListaContactos {
 				 * Insertamos en la lista de coordenadas
 				 */
 				NodoPosicion npActual = aux.getListaCoordenadas();
-				NodoPosicion npAnt=null;		
+				NodoPosicion npAnt = null;
+				NodoPosicion npNuevo = null;
 				boolean npEncontrado = false;
 				while (npActual!=null && !npEncontrado) {
 					if(npActual.getCoordenada().equals(p.getCoordenada())) {
@@ -39,13 +40,12 @@ public class ListaContactos {
 						npActual = npActual.getSiguiente();
 					}
 				}
-				if(!npEncontrado) {
-					NodoPosicion npNuevo = new NodoPosicion(p.getCoordenada(),1, null);
-					if(aux.getListaCoordenadas()==null)
-						aux.setListaCoordenadas(npNuevo);
-					else
-						npAnt.setSiguiente(npNuevo);			
-				}
+				if(!npEncontrado && aux.getListaCoordenadas()==null) {
+					npNuevo = new NodoPosicion(p.getCoordenada(),1, null);
+					aux.setListaCoordenadas(npNuevo);
+				}else if(!npEncontrado && aux.getListaCoordenadas()!=null)
+					npNuevo = new NodoPosicion(p.getCoordenada(),1, null);
+					npAnt.setSiguiente(npNuevo);
 			}else if(aux.getFecha().compareTo(p.getFechaPosicion())<0) {
 				ant = aux;
 				aux=aux.getSiguiente();
@@ -144,9 +144,7 @@ public class ListaContactos {
 		}
 		return cont;
 	}
-	
-	
-	
+
 	public int numNodosCoordenadaEntreDosInstantes(FechaHora inicio, FechaHora fin) {
 		if(this.size==0)
 			return 0;
