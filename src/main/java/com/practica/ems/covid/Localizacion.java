@@ -110,12 +110,15 @@ public class Localizacion {
 	
 	private  FechaHora parsearFecha (String fecha, String hora) {
 		FechaHora fechaParseado = parsearFecha(fecha);
-		String[] valores = fecha.split("\\/");
+		int dia, mes, anio;
+		dia = fechaParseado.getFecha().getDia();
+		mes = fechaParseado.getFecha().getMes();
+		anio = fechaParseado.getFecha().getAnio();
 		int minuto, segundo;
-		valores = hora.split("\\:");
+		String[] valores = hora.split("\\:");
 		minuto = Integer.parseInt(valores[0]);
 		segundo = Integer.parseInt(valores[1]);
-		FechaHora fechaHora = new FechaHora(fechaParseado.getFecha().getDia(), fechaParseado.getFecha().getMes(), fechaParseado.getFecha().getMes(), minuto, segundo);
+		FechaHora fechaHora = new FechaHora(dia, mes, anio, minuto, segundo);
 		return fechaHora;
 	}
 
